@@ -6,11 +6,22 @@ import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
 
-export default function CardUser() {
+interface User {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  avatar: string;
+}
+type Props = {
+  person: User;
+};
+
+const CardUser: React.FC<Props> = ({ person }) => {
   return (
     <Card
       sx={{
-        maxWidth: 210,
+        width: 210,
         backgrounColor: "#F5F5F5",
       }}
     >
@@ -26,7 +37,7 @@ export default function CardUser() {
             width: { xs: 50, md: 100 },
             height: { xs: 50, md: 100 },
           }}
-          src="https://storage.googleapis.com/challenge-sigalei/vishwas.png"
+          src={person.avatar}
         ></Avatar>
         <Container
           sx={{
@@ -44,16 +55,18 @@ export default function CardUser() {
               fontWeight: "bold",
             }}
           >
-            Vishwas Raman
+            {person.name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            vishwas@sigalei.io
+            {person.email}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            (555) 555-5555
+            {person.phone}
           </Typography>
         </Container>
       </CardContent>
     </Card>
   );
-}
+};
+
+export default CardUser;
