@@ -21,8 +21,8 @@ const CardUser: React.FC<Props> = ({ person }) => {
   return (
     <Card
       sx={{
-        width: 210,
-        backgrounColor: "#F5F5F5",
+        width: { sx: "100%", md: 210 },
+        backgroundColor: "#F5F5F5",
       }}
     >
       <CardContent

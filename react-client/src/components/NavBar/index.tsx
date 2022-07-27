@@ -33,7 +33,7 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
-            SIGALEI
+            SIGALEI TEST
           </Typography>
         </Toolbar>
       </Container>
